@@ -1,0 +1,354 @@
+/* Fuente */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* Variables */
+:root {
+  --primary: #111827;
+  --secondary: #d4af37;
+  --accent: #fbbf24;
+  --light: #f9fafb;
+  --white: #ffffff;
+  --text: #1f2937;
+  --gray: #6b7280;
+  --shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: var(--light);
+  color: var(--text);
+}
+
+/* Portada */
+.hero {
+  min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 40px;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url("../images/delegacion.jpg") center/cover no-repeat;
+}
+
+/* Contenido de la portada */
+.hero-content {
+  max-width: 850px;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+/* Sección información */
+.info {
+  width: min(1200px, 90%);
+  margin: 90px auto;
+}
+
+/* Título */
+.info h2 {
+  text-align: center;
+  color: var(--primary);
+  font-size: 2.5rem;
+  margin-bottom: 60px;
+}
+
+/* Tarjetas */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 35px;
+}
+
+.card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-12px);
+}
+
+.card i {
+  font-size: 32px;
+  color: var(--secondary);
+  margin-bottom: 20px;
+}
+
+.card h3 {
+  margin-bottom: 15px;
+  color: var(--primary);
+}
+
+.card p,
+.card li {
+  color: var(--gray);
+  line-height: 1.8;
+}
+
+/* Sección final */
+.compromiso {
+  padding: 90px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #146c43, #198754);
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Encabezado Fijo */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(45, 45, 45, 0.95);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 60px;
+  box-sizing: border-box;
+  z-index: 1000;
+}
+
+.logo h2 {
+  color: white;
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin-left: 30px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  padding-bottom: 5px;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  color: var(--accent);
+  border-bottom: 3px solid var(--accent);
+}
+
+/* Sección del mapa fuera de las tarjetas */
+.mapa-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.mapa-container h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+#map {
+  width: 100%;
+  height: 400px; /* Altura ideal para una buena navegación */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+  z-index: 1;
+}
+
+/* --- Sección del Mural --- */
+.mural-section {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.mural-container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.mural-img {
+  flex: 1;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.mural-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.mural-img img:hover {
+  transform: scale(1.02);
+}
+
+.mural-info {
+  flex: 1;
+}
+
+.mural-info h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+.mural-info p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.btn-mural {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #2c3e50;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.btn-mural:hover {
+  background-color: #1a252f;
+}
+
+/* Diseño adaptativo para dispositivos móviles */
+@media (max-width: 768px) {
+  .mural-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Estilo del pie de foto del mural */
+.mural-img figure {
+  margin: 0;
+  padding: 0;
+}
+
+.mural-caption {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: #666;
+  font-style: italic;
+  text-align: center;
+}
+
+.mural-caption small {
+  font-weight: 600;
+  color: #444;
+}
+
+/* Contenedor principal */
+.march31 {
+  background-color: #ffffff;
+  padding: 35px 25px;
+  margin: 30px auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  max-width: 1200px;
+}
+
+/* Encabezado e información */
+.march31-header {
+  text-align: center;
+  max-width: 850px;
+  margin: 0 auto 30px auto;
+}
+
+.march31-header h2 {
+  color: #1a202c;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.march31-header p {
+  color: #4a5568;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.march31-subtexto {
+  display: block;
+  color: #2b6cb0;
+  font-weight: 600;
+  font-size: 1.15rem;
+}
+
+
+.march31-galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* Imágenes */
+.march31-galeria img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.march31-galeria img:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}

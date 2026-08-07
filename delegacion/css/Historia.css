@@ -1,0 +1,360 @@
+/* Fuente */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* Variables */
+:root {
+  --primary: #111827;
+  --secondary: #d4af37;
+  --accent: #fbbf24;
+  --light: #f9fafb;
+  --white: #ffffff;
+  --text: #1f2937;
+  --gray: #4b5563;
+  --shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* Estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: var(--light);
+  color: var(--text);
+  padding-top: 110px;
+}
+
+/* Encabezado Fijo */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(45, 45, 45, 0.95);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 60px;
+  box-sizing: border-box;
+  z-index: 1000;
+}
+
+.logo h2 {
+  color: white;
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin-left: 30px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  padding-bottom: 5px;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  color: var(--accent);
+  border-bottom: 3px solid var(--accent);
+}
+
+/* Sección Historia */
+.historia {
+  width: min(1000px, 92%);
+  margin: 30px auto 90px;
+}
+
+.historia-contenedor {
+  background: var(--white);
+  padding: 50px 40px;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+/* Título principal de la página */
+.historia-titulo-principal {
+  text-align: center;
+  margin-bottom: 40px;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 30px;
+}
+
+.historia-titulo-principal span {
+  text-transform: uppercase;
+  color: var(--secondary);
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 1.1rem;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.historia-titulo-principal h2 {
+  color: var(--primary);
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.historia-titulo-principal p {
+  color: var(--gray);
+  font-size: 1.25rem;
+  line-height: 1.8;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+/* Acordeón (Desplegables) */
+.acordeon {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.acordeon-item {
+  border: 2px solid #e5e7eb;
+  border-radius: 16px;
+  overflow: hidden;
+  transition:
+    border-color 0.3s,
+    box-shadow 0.3s;
+}
+
+.acordeon-item.activo {
+  border-color: var(--secondary);
+  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.15);
+}
+
+/* Botón desplegable */
+.acordeon-header {
+  width: 100%;
+  background: #ffffff;
+  padding: 24px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  text-align: left;
+  transition: background 0.3s;
+}
+
+.acordeon-header:hover {
+  background: #f9fafb;
+}
+
+.acordeon-header span {
+  color: var(--primary);
+  font-size: 1.6rem; /* Título grande */
+  font-weight: 600;
+}
+
+.acordeon-icono {
+  font-size: 1.4rem;
+  color: var(--secondary);
+  transition: transform 0.4s ease;
+}
+
+/* Rotación del ícono al abrir */
+.acordeon-item.activo .acordeon-icono {
+  transform: rotate(180deg);
+}
+
+/* Contenido oculto/animado */
+.acordeon-contenido {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0, 1, 0, 1);
+  background: #ffffff;
+}
+
+.contenido-inner {
+  padding: 10px 30px 35px 30px;
+  border-top: 1px solid #f3f4f6;
+}
+
+/* Formato del texto interno (Gran tamaño) */
+.contenido-inner h3 {
+  color: var(--primary);
+  font-size: 1.5rem;
+  margin: 30px 0 12px;
+  position: relative;
+  padding-left: 16px;
+}
+
+.contenido-inner h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 15%;
+  height: 70%;
+  width: 5px;
+  background: var(--secondary);
+  border-radius: 3px;
+}
+
+.contenido-inner p {
+  color: var(--text);
+  font-size: 1.25rem; /* Tamaño de letra amplio */
+  line-height: 1.9;
+  margin-bottom: 20px;
+}
+
+.contenido-inner ul {
+  list-style: none;
+  margin: 20px 0 30px;
+  padding: 0;
+}
+
+.contenido-inner li {
+  background: #f9fafb;
+  padding: 22px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  color: var(--text);
+  font-size: 1.2rem;
+  line-height: 1.8;
+  border-left: 5px solid var(--secondary);
+}
+
+.contenido-inner li strong {
+  color: var(--primary);
+  font-size: 1.25rem;
+}
+
+/* Responsivo */
+@media (max-width: 790px) {
+  header {
+    flex-direction: column;
+    padding: 15px 20px;
+    gap: 15px;
+  }
+
+  /* Encabezado Fijo */
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(45, 45, 45, 0.95);
+    backdrop-filter: blur(6px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 60px;
+    box-sizing: border-box;
+    z-index: 1000;
+  }
+
+  .logo h2 {
+    color: white;
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+  }
+
+  nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav ul li {
+    margin-left: 30px;
+  }
+
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    padding-bottom: 5px;
+    transition: 0.3s;
+  }
+
+  nav ul li a:hover {
+    color: var(--accent);
+    border-bottom: 3px solid var(--accent);
+  }
+
+  body {
+    padding-top: 140px;
+  }
+
+  .historia-contenedor {
+    padding: 30px 18px;
+  }
+
+  .historia-titulo-principal h2 {
+    font-size: 2rem;
+  }
+
+  .acordeon-header {
+    padding: 18px 20px;
+  }
+
+  .acordeon-header span {
+    font-size: 1.25rem;
+  }
+
+  .contenido-inner {
+    padding: 10px 18px 25px 18px;
+  }
+
+  .contenido-inner p,
+  .contenido-inner li {
+    font-size: 1.1rem;
+  }
+}
+
+/* Contenedor de la imagen */
+.sundayRed {
+  max-width: 400px; 
+  width: 100%;
+  margin: 20px auto; 
+}
+
+/* La imagen dentro del contenedor */
+.sundayRed img {
+  width: 100% !important;
+  height: auto !important; 
+  display: block;
+  border-radius: 6px; 
+}
+
+.imageFounder {
+  max-width: 400px; 
+  width: 100%;
+  margin: 20px auto; 
+}
+
+/* La imagen dentro del contenedor */
+.imageFounder img {
+  width: 100% !important;
+  height: auto !important; 
+  display: block;
+  border-radius: 6px; 
+}
+
+
+

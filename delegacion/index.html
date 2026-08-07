@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delegación Rubén Jaramillo</title>
+    <link rel="icon" type="image/jpeg" href="../delegacion/icons/Founder.jpeg" />
+    <link rel="stylesheet" href="css/index.css" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
+    <!-- Leaflet CSS (Mapa) -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+  </head>
+
+  <body>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Delegación Rubén Jaramillo</h1>
+
+        <p>
+          Trabajando para brindar una atención cercana, eficiente y transparente
+          a los habitantes de la colonia Rubén Jaramillo y comunidades vecinas.
+        </p>
+
+        <header>
+          <div class="logo">
+            <h2>Delegación Rubén Jaramillo</h2>
+          </div>
+
+          <nav>
+            <ul>
+              <li><a href="../delegacion/index.html">Inicio</a></li>
+              <li><a href="../delegacion/pages/Historia.html">Historia</a></li>
+              <li>
+                <a href="../delegacion/pages/barrios.html">Terretorios</a>
+              </li>
+              <li>
+                <a href="../delegacion/pages/infraestructura.html"
+                  >Infraestructura local</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </header>
+      </div>
+    </section>
+
+    <!-- Sección: Mural Histórico -->
+    <section class="mural-section">
+      <div class="mural-container">
+        <div class="mural-img">
+          <figure>
+            <img
+              src="../delegacion/images/mural.jpg"
+              alt="Mural Conmemorativo de la Fundación de la Colonia Proletaria Rubén Jaramillo."
+            />
+            <figcaption class="mural-caption">
+              Mural en la colonia proletaria Rubén Jaramillo. <br />
+              <small>Foto: Ricardo Yunuel Fuentes</small>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="mural-info">
+          <h2>Nuestra Historia e Identidad</h2>
+          <p>
+            Mural conmemorativo de la fundación de la Colonia Proletaria Rubén
+            Jaramillo (31 de marzo de 1973), que retrata la memoria histórica,
+            la organización comunitaria y la lucha social de nuestra comunidad.
+          </p>
+        </div>
+      </div>
+    </section>
+
+        <!-- Seccion Aniversario 31 de Marzo -->
+    <div class="march31">
+        <h2>¡Celebramos nuestras raíces y nuestra historia!</h2>
+        <p>
+          Cada 31 de marzo, nuestra comunidad se viste de fiesta para conmemorar
+          la fundación de la <strong>Colonia Rubén Jaramillo</strong>. Es el día
+          perfecto para recordar nuestra lucha, unirnos como familia y disfrutar
+          de un gran desfile, deliciosa comida, música y una
+          convivencia inolvidable.
+          <span>¡Forma parte viva de nuestra historia!</span>
+        </p>
+
+      <div class="march31-galeria">
+        <img src="../delegacion/images/march1.jpeg" alt="Aniversario 1" />
+        <img src="../delegacion/images/march2.jpeg" alt="Aniversario 2" />
+        <img src="../delegacion/images/march3.jpeg" alt="Aniversario 3" />
+        <img src="../delegacion/images/march4.jpeg" alt="Aniversario 4" />
+        <img src="../delegacion/images/march5.jpeg" alt="Aniversario 5" />
+        <img src="../delegacion/images/march6.jpeg" alt="Aniversario 6" />
+        <img src="../delegacion/images/march7.jpeg" alt="Aniversario 7" />
+        <img src="../delegacion/images/march8.jpeg" alt="Aniversario 8" />
+        <img src="../delegacion/images/march9.jpg" />
+        <img src="../delegacion/images/march11.jpg" />
+        <img src="../delegacion/images/march12.jpg" />
+        <img src="../delegacion/images/march13.jpg" />
+      </div>
+    </div>
+
+    <section class="info">
+      <h2>Conoce Nuestra Delegación</h2>
+
+      <div class="cards">
+        <div class="card">
+          <i class="fas fa-location-dot"></i>
+
+          <h3>Ubicación</h3>
+
+          <p>
+            Mariano Matamoros esquina con Niño Artillero S/N<br />
+            Colonia Rubén Jaramillo<br />
+            C.P. 62587<br />
+            Temixco, Morelos.
+          </p>
+
+          <strong>Teléfono:</strong>
+          <p>(777) 362-1830</p>
+        </div>
+
+        <div class="card">
+          <i class="fas fa-handshake"></i>
+
+          <h3>Servicios</h3>
+
+          <ul>
+            <li>Atención ciudadana.</li>
+            <li>Gestión de servicios públicos.</li>
+            <li>Recepción de solicitudes.</li>
+            <li>Enlace con el Ayuntamiento.</li>
+            <li>Programas comunitarios.</li>
+            <li>Programa de despensa básica a bajo costo.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <i class="fas fa-users"></i>
+          <h3>Compromiso</h3>
+
+          <p>
+            Trabajamos para fortalecer la participación ciudadana y mejorar
+            continuamente los servicios que recibe nuestra comunidad.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección del Mapa -->
+    <section class="mapa-container">
+      <h2>Encuéntranos Aquí</h2>
+      <div id="map"></div>
+    </section>
+
+    <section class="compromiso">
+      <h2>¡Juntos Construimos una Mejor Comunidad!</h2>
+
+      <p>
+        La Delegación Rubén Jaramillo mantiene un compromiso permanente con el
+        desarrollo, la atención ciudadana y el bienestar de todas las familias.
+      </p>
+    </section>
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="../delegacion/js/map.js"></script>
+  </body>
+</html>
