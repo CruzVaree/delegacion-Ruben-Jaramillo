@@ -1,0 +1,515 @@
+:root {
+  --rojo: #e74c3c;
+  --oscuro: #333333;
+  --gris-banner: #666666;
+  --fondo: #f8f9fa;
+  --blanco: #ffffff;
+  --borde: #eaeaea;
+  --fuente: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--fuente);
+  background-color: var(--fondo);
+  color: var(--oscuro);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Encabezado */
+.encabezado {
+  background-color: var(--oscuro);
+  width: 100%;
+  padding: 15px 0;
+}
+
+.menu {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+}
+
+.menu .logo {
+  flex-shrink: 0;
+}
+
+.menu .logo h2 {
+  font-size: 1.25rem;
+  color: var(--blanco);
+  white-space: nowrap;
+}
+
+.menu nav {
+  min-width: 0;
+}
+
+.menu nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  list-style: none;
+  gap: 25px;
+}
+
+.menu nav a {
+  color: var(--blanco);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.menu nav a:hover,
+.menu nav a.activo {
+  color: var(--rojo);
+}
+
+/* Banner */
+.banner {
+  background-color: var(--gris-banner);
+  color: var(--blanco);
+  padding: 55px 20px;
+  text-align: center;
+}
+
+.banner-texto {
+  width: 100%;
+  max-width: 850px;
+  margin: auto;
+}
+
+.banner-texto h1 {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.banner-texto p {
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  opacity: 0.9;
+}
+
+/* Contenedor */
+.contenedor {
+  width: 100%;
+  max-width: 950px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Tarjetas */
+.tarjeta {
+  width: 100%;
+  background-color: var(--blanco);
+  border-radius: 8px;
+  border: 1px solid var(--borde);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Botón */
+.boton-desplegar {
+  width: 100%;
+  min-height: 70px;
+  background: none;
+  border: none;
+  padding: 18px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  outline: none;
+  text-align: left;
+}
+
+.titulo {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.titulo .icono {
+  flex: 0 0 25px;
+  font-size: 1.4rem;
+  color: var(--rojo);
+  text-align: center;
+}
+
+.titulo h3 {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.flecha {
+  flex: 0 0 auto;
+  font-size: 1rem;
+  color: #888;
+  transition:
+    transform 0.4s ease,
+    color 0.3s ease;
+}
+
+/* Tarjeta activa */
+.tarjeta.activo {
+  border-left: 5px solid var(--rojo);
+}
+
+.tarjeta.activo .flecha {
+  transform: rotate(180deg);
+  color: var(--rojo);
+}
+
+/* Contenido */
+.contenido {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.detalle {
+  padding: 18px 20px 20px;
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 20px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.imagen {
+  width: 100%;
+  min-width: 0;
+}
+
+.imagen img {
+  display: block;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.imagen a {
+  display: inline-flex;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #555;
+  text-decoration: none;
+  font-style: italic;
+  margin-top: 8px;
+  overflow-wrap: anywhere;
+  transition: 0.3s;
+}
+
+.imagen a:hover {
+  color: var(--rojo);
+  text-decoration: underline;
+}
+
+/* Texto */
+.texto {
+  min-width: 0;
+}
+
+.texto p {
+  color: #555;
+  margin-bottom: 12px;
+  overflow-wrap: anywhere;
+}
+
+.texto h4 {
+  color: #2c3e50;
+  margin-bottom: 8px;
+}
+
+.texto ul {
+  list-style: none;
+  margin-bottom: 15px;
+}
+
+.texto ul li {
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  overflow-wrap: anywhere;
+}
+
+.texto ul li i {
+  flex: 0 0 auto;
+  color: var(--rojo);
+  margin-top: 5px;
+}
+
+.fuente {
+  margin-top: -5px;
+}
+
+.fuente a {
+  color: #666;
+  font-size: 0.85rem;
+  font-style: italic;
+  text-decoration: none;
+}
+
+.fuente a:hover {
+  color: var(--rojo);
+  text-decoration: underline;
+}
+
+/* Compromiso */
+.compromiso {
+  color: white;
+  text-align: center;
+  padding: 70px 30px;
+  margin-top: 80px;
+  background: linear-gradient(135deg, #146c43, #198754);
+}
+
+.compromiso h2 {
+  font-size: clamp(1.5rem, 4vw, 1.8rem);
+  margin-bottom: 15px;
+}
+
+.compromiso p {
+  width: 100%;
+  max-width: 700px;
+  margin: auto;
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .menu {
+    padding: 0 20px;
+  }
+
+  .menu nav ul {
+    gap: 15px;
+  }
+
+  .menu nav a {
+    font-size: 0.9rem;
+  }
+
+  .detalle {
+    grid-template-columns: 220px minmax(0, 1fr);
+  }
+
+  .imagen img {
+    height: 170px;
+  }
+}
+
+/* Tablet pequeña */
+@media (max-width: 768px) {
+  .encabezado {
+    padding: 18px 0;
+  }
+
+  .menu {
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .menu .logo h2 {
+    font-size: 1.2rem;
+    text-align: center;
+    white-space: normal;
+  }
+
+  .menu nav {
+    width: 100%;
+  }
+
+  .menu nav ul {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+  }
+
+  .menu nav a {
+    font-size: 0.9rem;
+  }
+
+  .banner {
+    padding: 45px 20px;
+  }
+
+  .contenedor {
+    margin: 30px auto;
+    padding: 0 15px;
+  }
+
+  .detalle {
+    grid-template-columns: 1fr;
+  }
+
+  .imagen img {
+    height: 250px;
+  }
+
+  .compromiso {
+    margin-top: 60px;
+    padding: 60px 25px;
+  }
+}
+
+/* Celular */
+@media (max-width: 480px) {
+  .encabezado {
+    padding: 15px 10px;
+  }
+
+  .menu {
+    padding: 0 5px;
+  }
+
+  .menu .logo h2 {
+    font-size: 1.05rem;
+  }
+
+  .menu nav ul {
+    gap: 8px 12px;
+  }
+
+  .menu nav a {
+    font-size: 0.82rem;
+  }
+
+  .banner {
+    padding: 35px 15px 40px;
+  }
+
+  .banner-texto h1 {
+    font-size: 1.8rem;
+  }
+
+  .banner-texto p {
+    font-size: 0.95rem;
+  }
+
+  .contenedor {
+    margin: 25px auto;
+    padding: 0 10px;
+    gap: 12px;
+  }
+
+  .boton-desplegar {
+    min-height: 65px;
+    padding: 15px;
+    gap: 10px;
+  }
+
+  .titulo {
+    gap: 10px;
+  }
+
+  .titulo .icono {
+    flex-basis: 22px;
+    font-size: 1.2rem;
+  }
+
+  .titulo h3 {
+    font-size: 1rem;
+  }
+
+  .flecha {
+    font-size: 0.85rem;
+  }
+
+  .detalle {
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .imagen img {
+    height: 210px;
+  }
+
+  .texto p {
+    font-size: 0.95rem;
+  }
+
+  .texto h4 {
+    font-size: 1rem;
+  }
+
+  .texto ul li {
+    font-size: 0.9rem;
+  }
+
+  .imagen a {
+    font-size: 0.78rem;
+  }
+
+  .compromiso {
+    margin-top: 50px;
+    padding: 50px 20px;
+  }
+
+  .compromiso h2 {
+    font-size: 1.4rem;
+  }
+
+  .compromiso p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Celular pequeño */
+@media (max-width: 360px) {
+  .menu nav ul {
+    gap: 7px 10px;
+  }
+
+  .menu nav a {
+    font-size: 0.76rem;
+  }
+
+  .banner-texto h1 {
+    font-size: 1.6rem;
+  }
+
+  .titulo h3 {
+    font-size: 0.92rem;
+  }
+
+  .boton-desplegar {
+    padding: 13px 12px;
+  }
+
+  .detalle {
+    padding: 12px;
+  }
+
+  .imagen img {
+    height: 180px;
+  }
+}
